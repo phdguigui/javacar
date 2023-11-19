@@ -2,8 +2,8 @@ public class Venda {
 	private Veiculo Veiculo;
 	private String Data;
 	private float Valor;
-	private String NomeCliente;
-	private String NomeVendedor;
+	private Cliente Cliente;
+	private Vendedor Vendedor;
 	
 	public Veiculo getVeiculo() {
 		return Veiculo;
@@ -23,16 +23,16 @@ public class Venda {
 	public void setValor(float valor) {
 		Valor = valor;
 	}
-	public String getNomeCliente() {
-		return NomeCliente;
+	public Cliente getCliente() {
+		return Cliente;
 	}
-	public void setNomeCliente(String nomeCliente) {
-		NomeCliente = nomeCliente;
+	public void setCliente(Cliente cliente) {
+		Cliente = cliente;
 	}
-	public String getNomeVendedor() {
-		return NomeVendedor;
+	public Vendedor getVendedor() {
+		return Vendedor;
 	}
-	public void setNomeVendedor(String nomeVendedor) {
-		NomeVendedor = nomeVendedor;
+	public void setVendedor(Vendedor vendedor) {
+		Vendedor = vendedor;
 	}
 }

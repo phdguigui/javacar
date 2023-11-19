@@ -1,4 +1,6 @@
-public class Veiculo {
+import javax.swing.JOptionPane;
+
+public class Veiculo extends Loja{
 	private String Nome;
 	private String Marca;
 	private String Cor;
@@ -46,7 +48,14 @@ public class Veiculo {
 	public String getPlaca() {
 		return Placa;
 	}
-	public void setPlaca(String placa) {
+	public boolean setPlaca(String placa) {
+		for(var veiculo : ListaVeiculos){
+			if(veiculo.getPlaca().trim().toLowerCase() == placa.trim().toLowerCase()) {
+				JOptionPane.showMessageDialog(null, "Placa já cadastrada");
+				return false;
+			}
+		}
 		Placa = placa;
+		return true;
 	}
 }

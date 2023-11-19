@@ -3,6 +3,6 @@ public class Moto extends Veiculo {
 	private boolean PartidaEletrica;
 	
 	public void exibirInformacoes() {
-		
+		// To do
 	}
 }
