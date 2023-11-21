@@ -40,7 +40,39 @@ public class Loja {
 	}
 	
 	public static boolean AlterarDadoVeiculo(String placa) {
-		// To do
+		boolean veiculoEncontrado = false;
+		
+		for(Veiculo veiculo : ListaVeiculos) {
+        	if(veiculo.getPlaca() == placa) {
+        		int opcao = 0;
+        		while(opcao!=4) {
+        			opcao = Integer.parseInt(JOptionPane.showInputDialog("Menu:\n"
+        					+ "1 - Alterar cor do veículo\n"
+        					+ "2 - Alterar quilometragem do veículo\n"
+        					+ "3 - Alterar valor do veículo\n"
+        					+ "4 - Sair\n"));
+        			switch(opcao) {
+        			case 1://Altera cor veículo
+        				veiculo.setCor(JOptionPane.showInputDialog("Insira a nova cor do veículo:"));
+        				break;
+        			case 2://Altera quilometragem veículo
+        				veiculo.setKm(Integer.parseInt(JOptionPane.showInputDialog("Insira a quilometragem atualizada do veículo:")));
+        				break;
+        			case 3://Altera valor do veículo
+        				veiculo.setValor(Float.parseFloat(JOptionPane.showInputDialog("Insira o novo valor do veículo:")));
+        				break;
+        			default:
+        				break;
+        			}
+        		}
+        		veiculoEncontrado = true;
+        		break;
+        	}
+        }
+        if(!veiculoEncontrado) {
+        	JOptionPane.showMessageDialog(null, "Veículo não encontrado");
+        	return false;
+        }
 		return true;
 	}
 	
@@ -152,18 +184,68 @@ public class Loja {
 	}
 	
 	public static void ListarVeiculos() {
-		// To do
+		if(ListaVeiculos.size()==0) {
+			JOptionPane.showMessageDialog(null, "Não há veículos a serem listados");
+		}else {
+			for(Veiculo veiculo : ListaVeiculos) {
+				String detalhes="Detalhes do Veículo\n";
+				detalhes+="Veículo: " + veiculo.getNome()+ "\n";
+				detalhes+="Marca: "+ veiculo.getMarca() + "\n";
+				detalhes+="Ano: " + veiculo.getAno()+ "\n";
+				detalhes+="Quilometragem: " + veiculo.getKm()+ "\n";
+				detalhes+="Cor: " + veiculo.getCor() + "\n";
+				detalhes+="Placa: " + veiculo.getPlaca()+ "\n";
+				detalhes+="Valor: " + veiculo.getValor() + "\n";
+				JOptionPane.showMessageDialog(null, detalhes);
+			}
+		}
 	}
 	
 	public static void ListarClientes() {
-		// To do
+		if(ListaClientes.size()==0) {
+			JOptionPane.showMessageDialog(null, "Não há clientes a serem listados");
+		}else {
+			for(Cliente cliente : ListaClientes) {
+				String detalhes="Informações do cliente\n";
+				detalhes+="Nome: " + cliente.getNome()+ "\n";
+				detalhes+="Endereço: "+ cliente.getEndereco() + "\n";
+				detalhes+="Cidade: "+ cliente.getCidade() + "\n";
+				detalhes+="Estado: " + cliente.getEstado()+ "\n";
+				detalhes+="CPF: " + cliente.getCPF()+ "\n";
+				JOptionPane.showMessageDialog(null, detalhes);
+			}
+		}
 	}
 	
 	public static void ListarVendedores() {
-		// To do
+		if(ListaVendedores.size()==0) {
+			JOptionPane.showMessageDialog(null, "Não há vendedores a serem listados");
+		}else {
+			for(Vendedor vendedor : ListaVendedores) {
+				String detalhes="Informações do vendedor\n";
+				detalhes+="Nome: " + vendedor.getNome()+ "\n";
+				detalhes+="Endereço: "+ vendedor.getEndereco() + "\n";
+				detalhes+="Cidade: "+ vendedor.getCidade() + "\n";
+				detalhes+="Estado: " + vendedor.getEstado()+ "\n";
+				JOptionPane.showMessageDialog(null, detalhes);
+			}
+		}
 	}
 	
 	public static void ListarVendas() {
-		// To do
+		if(ListaVendas.size()==0) {
+			JOptionPane.showMessageDialog(null, "Não há vendas a serem listados");
+		}else {
+			for(Venda venda : ListaVendas) {
+				String detalhes="Relatório de venda\n";
+				detalhes+="Nome do cliente: " + venda.getCliente().getNome()+ "\n";
+				detalhes+="Nome do vendedor: "+ venda.getVendedor().getNome() + "\n";
+				detalhes+="Data da venda: "+ venda.getData() + "\n";
+				detalhes+="Veículo: " + venda.getVeiculo().getNome()+ "\n";
+				detalhes+="Placa do Veículo: " + venda.getVeiculo().getPlaca()+ "\n";
+				detalhes+="Valor: " + venda.getValor()+ "\n";
+				JOptionPane.showMessageDialog(null, detalhes);
+			}
+		}
 	}
 }
