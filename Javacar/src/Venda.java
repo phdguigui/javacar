@@ -5,6 +5,10 @@ public class Venda {
 	private Cliente Cliente;
 	private Vendedor Vendedor;
 	
+	Venda(){
+		
+	}
+	
 	public Veiculo getVeiculo() {
 		return Veiculo;
 	}
