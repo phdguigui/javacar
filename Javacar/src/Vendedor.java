@@ -13,7 +13,7 @@ public class Vendedor {
 	}
 	
 	//lista todas as vendas realizadas pelo vendedor
-	public void listarCompras() {
+	public void listarVendas() {
 		if(vendas.size()==0) {
 			JOptionPane.showMessageDialog(null, "Este vendedor ainda não realizou nenhuma venda");
 		}else {
@@ -29,6 +29,10 @@ public class Vendedor {
 				JOptionPane.showMessageDialog(null, detalhes);
 			}
 		}
+	}
+	
+	public void addVenda(Venda venda) {
+		this.vendas.add(venda);
 	}
 	
 	public String getNome() {

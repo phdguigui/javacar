@@ -32,6 +32,10 @@ public class Cliente {
 		}
 	}
 	
+	public void addCompra(Venda compra) {
+		this.compras.add(compra);
+	}
+	
 	public String getNome() {
 		return Nome;
 	}
