@@ -1,61 +1,52 @@
-import javax.swing.JOptionPane;
-
-public class Veiculo extends Loja{
-	private String Nome;
-	private String Marca;
-	private String Cor;
-	private int Ano;
-	private int Km;
-	private float Valor;
-	private String Placa;
+public class Veiculo{
+	private String nome;
+	private String cor;
+	private String marca;
+	private int ano;
+	private int km;
+	private float valor;
+	private String placa;
 	
-	public String getNome() {
-		return Nome;
-	}
-	public void setNome(String nome) {
-		Nome = nome;
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 	public String getMarca() {
-		return Marca;
+		return marca;
 	}
-	public void setMarca(String marca) {
-		Marca = marca;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getCor() {
-		return Cor;
+		return cor;
 	}
 	public void setCor(String cor) {
-		Cor = cor;
+		this.cor = cor;
 	}
 	public int getAno() {
-		return Ano;
+		return ano;
 	}
 	public void setAno(int ano) {
-		Ano = ano;
+		this.ano = ano;
 	}
 	public int getKm() {
-		return Km;
+		return km;
 	}
 	public void setKm(int km) {
-		Km = km;
+		this.km = km;
 	}
 	public float getValor() {
-		return Valor;
+		return valor;
 	}
 	public void setValor(float valor) {
-		Valor = valor;
+		this.valor = valor;
 	}
 	public String getPlaca() {
-		return Placa;
+		return placa;
 	}
-	public boolean setPlaca(String placa) {
-		for(var veiculo : ListaVeiculos){
-			if(veiculo.getPlaca().trim().toLowerCase() == placa.trim().toLowerCase()) {
-				JOptionPane.showMessageDialog(null, "Placa já cadastrada");
-				return false;
-			}
-		}
-		Placa = placa;
-		return true;
+	public void setPlaca(String placa) {
+		this.placa = placa;
 	}
 }
